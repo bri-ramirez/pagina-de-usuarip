@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>página de usuario</title>
 </head>
 <body>
@@ -22,12 +22,12 @@
         <div class="column1">
             
             <div class="card tarjeta">
-                <img src="icons/user-circle.png" id="user-image"> 
+                <img src="assets/icons/user-circle.png" id="user-image"> 
                 <div class="fila1"></div>
                 <div class="fila2">
-                    <h2>Briggitte Ramírez</h2>
+                    <h2 id="profile-name">Jane Doe</h2>
                     <div class="ubicacion">
-                        <img src="icons/map-marker.png" id="map-image"> Valparaíso, Chile.
+                        <img src="assets/icons/map-marker.png" id="map-image"> Valparaíso, Chile.
                     </div>
                     <p class="carrera">
                         Developer | Engineer | Problem Solver
@@ -35,57 +35,63 @@
                         Master of shadows and the Internet!
                     </p>
                     <div class="edit-profile">
-                        <img src="icons/gear.png" id="gear-image">
-                        <a href="#">Edit profile</a>
+                        <img src="assets/icons/gear.png" id="gear-image">
+                        <a href="#" onclick="editProfile()">Edit profile</a>
                     </div>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Education</h2>
-                <p>
-                    Coding Dojo - Full Stack Bootcamp<br>
-                    dec 2019 - Mar 2020 <br>
-                    Triple black belt in Phyton, MERN, and C#...
-                </p>
-                
+                <div class="card-header">
+                    <h2>Education</h2>
+                </div>
+                <div class="card-body">
+                    <h2>Coding Dojo - Full Stack Bootcamp</h2>
+                    <p class="dates">Dec 2019 - Mar 2020</p>
+                    <p>Triple black belt in Python, MERN, and C#...</p>
+                </div>
             </div>
         </div>
         <div class="column2">
-            <div class="card" id="connection-requests">
-                <h2><span class="notification">2</span> Connection Request </h2>
-                <div class="card-row">
-                    <img src="images/todd-s.jpg" class="card-avatar">
-                    <div class="row-name">Todd E</div>
-                    <img src="icons/accept-circle.png" class="card-icons">
-                    <img src="icons/close-circle.png" class="card-icons">
-
-
+            <div class="card" id="connection-requests"> 
+                <div class="card-header">
+                    <h3><span class="notification" id="number-request">2</span> Connection Request</h3>
                 </div>
-                <div class="card-row">
-                    <img src="images/phil-s.jpg" class="card-avatar">
-                    <div class="row-name">Phil K</div>
-                    <img src="icons/accept-circle.png" class="card-icons">
-                    <img src="icons/close-circle.png" class="card-icons">
 
+                <div id="card-body">
+                    <div class="card-row" id="row-todd">
+                        <img src="assets/images/todd-s.jpg" class="card-avatar">
+                        <div class="row-name">Todd E</div>
+                        <img src="assets/icons/accept-circle.png" class="card-icons" onclick="acceptRequest('row-todd')"> 
+                        <img src="assets/icons/close-circle.png" class="card-icons" onclick="closeRequest('row-todd')">
+                    </div>
+                    <div class="card-row" id="row-phill">
+                        <img src="assets/images/phil-s.jpg" class="card-avatar">
+                        <div class="row-name">Phil K</div>
+                        <img src="assets/icons/accept-circle.png" class="card-icons" onclick="acceptRequest('row-phill')">
+                        <img src="assets/icons/close-circle.png" class="card-icons" onclick="closeRequest('row-phill')">
+                    </div>
                 </div>
+                
             </div>
             <div class="card" id="your-connections">
-                <h2><span class="notification">500+</span> Your Connection </h2>
+                <div class="card-header">
+                    <h3><span class="notification" id="number-connection">500+</span> Your Connection </h3>
+                </div>
                 <div class="card-row">
-                    <img src="images/adrien-s.jpg " class="card-avatar">
+                    <img src="assets/images/adrien-s.jpg " class="card-avatar">
                     <div class="row-name">Adrien S</div>
                 </div> 
                 <div class="card-row">
-                    <img src="images/alayne-s.jpg " class="card-avatar">
+                    <img src="assets/images/alayne-s.jpg " class="card-avatar">
                     <div class="row-name">Alayne S</div>
                 </div> 
                 <div class="card-row">
-                    <img src="images/anne-s.jpg " class="card-avatar">
+                    <img src="assets/images/anne-s.jpg " class="card-avatar">
                     <div class="row-name">Anne S</div>
                 </div> 
                 <div class="card-row">
-                    <img src="images/jane-m.jpg " class="card-avatar">
+                    <img src="assets/images/jane-m.jpg " class="card-avatar">
                     <div class="row-name">Jane S</div>
                 </div> 
 
@@ -96,6 +102,6 @@
 
         </div>
     </div>
-    
+        <script src="scripts/script.js"></script>
 </body>
 </html>
